@@ -1,7 +1,9 @@
 <?php
 include ("koneksi.php");
-// if (!isset($_session['user'])) {
-// header("Location: http://localhost:8080/website/Simple%20POS/login.php");
+session_start();
+if (!isset($_SESSION["user"])) {
+		header("Location: http://localhost:8080/website/Simple%20POS/login.php");
+}
 ?>
 <style>
 </style>
@@ -37,11 +39,11 @@ include ("koneksi.php");
 	      		<td><?php echo $row['harga']; ?></td>  
 	      		<td><?php echo $row['jml_stock']; ?></td> 
 	      		<td>
-					<a href="">Tambah</a>
+					<a href="tambah_barang.php">Tambah</a>
 					<span>|</span>
-	      			<a href="">Ubah</a>
+	      			<?php echo "<a href='ubah_barang.php?id=$row[id_barang]'>Ubah</a>" ?>
 	      			<span>|</span>
-	      			<a href="">Hapus</a>
+	      			<?php echo "<a href='hapus_barang.php?id=$row[id_barang]'>Hapus</a>" ?>
 	      		</td>                   
 	    		</tr>
 	    	<?php

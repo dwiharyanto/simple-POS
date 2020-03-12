@@ -1,7 +1,9 @@
 <?php
 include ("koneksi.php");
-// if (!isset($_session['user'])) {
-// header("Location: http://localhost:8080/website/Simple%20POS/login.php");
+session_start();
+if (!isset($_SESSION["user"])) {
+		header("Location: http://localhost:8080/website/Simple%20POS/login.php");
+}
 ?>
 <style>
 </style>

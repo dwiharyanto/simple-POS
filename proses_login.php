@@ -1,13 +1,14 @@
 <?php
 session_start(); //memulai session
 //mengambil isian username dan password dari form
-$username = ($_POST['username']);
-$password = ($_POST['password']);
+$username = ltrim(($_POST['username']));
+$password = ltrim(($_POST['password']));
 
-if (($username == "admin") and ($password == "admin")) {
+if (($username == "pos") and ($password == "testing")) {
 //menyimpan tipe user dan username dalam session
 $_SESSION['user'] = 'admin';
 header("Location: http://localhost:8080/website/Simple%20POS/index.php");
+
 
 }
 //jika password tidak sesuai
